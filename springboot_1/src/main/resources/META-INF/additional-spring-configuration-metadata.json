@@ -1,0 +1,13 @@
+{
+  "properties": [
+    {
+      "name": "spring.jpa.show-aql",
+      "type": "java.lang.String",
+      "description": "Description for spring.jpa.show-aql."
+    },
+    {
+      "name": "spring.datasource",
+      "type": "java.lang.String",
+      "description": "Description for spring.datasource."
+    }
+  ] }
