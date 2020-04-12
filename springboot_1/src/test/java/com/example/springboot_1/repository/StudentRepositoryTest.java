@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 class StudentRepositoryTest {
 
     @Autowired
-    private StudentRepository studentRepository;
+    private BookRepository studentRepository;
 
     @Test
     void findALL(){
