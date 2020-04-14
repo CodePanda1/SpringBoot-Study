@@ -31,7 +31,7 @@ public class BookHandler {
     }
 
     @GetMapping("/findById/{id}")
-    public Book findById(@PathVariable("id") Integer id) {
+    public Book findById(@PathVariable("id") String id) {
         return bookRepository.findById(id).get();
     }
 
@@ -46,7 +46,7 @@ public class BookHandler {
     }
 
     @DeleteMapping("/deleteById/{id}")
-    public void deleteById(@PathVariable("id") Integer id) {
+    public void deleteById(@PathVariable("id") String id) {
         bookRepository.deleteById(id);
     }
 }

@@ -24,29 +24,29 @@ class Springboot1ApplicationTests {
     @Test
     void save() {
         Book book = new Book();
-        book.setName("张三");
-        book.setAuthor("男");
+        book.setName("99999999");
+        book.setAuthor("dhrdfh");
         Book book1 = repository.save(book);
         System.out.println(book1);
     }
 
     @Test
     void findById() {
-        Book book = repository.findById(1).get();
+        Book book = repository.findById("3").get();
         System.out.println(book);
     }
 
     @Test
     void update(){
         Book book = new Book();
-        book.setId(26);
-        book.setName("11111111");
+        book.setId("29");
+        book.setName("4365456456");
         Book book1 =repository.save(book);
         System.out.println(book1);
     }
 
     @Test
     void dalete(){
-        repository.deleteById(26);
+        repository.deleteById(String.valueOf(28));
     }
 }
