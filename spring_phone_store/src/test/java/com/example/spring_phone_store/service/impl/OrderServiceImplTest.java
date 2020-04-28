@@ -2,6 +2,7 @@ package com.example.spring_phone_store.service.impl;
 
 import com.example.spring_phone_store.dto.OrderDTO;
 import com.example.spring_phone_store.service.OrderService;
+import com.example.spring_phone_store.vo.OrderDetailVO;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -25,5 +26,16 @@ class OrderServiceImplTest {
 
         OrderDTO result = orderService.create(orderDTO);
         System.out.println(result);
+    }
+
+    @Test
+    void findDetail() {
+        OrderDetailVO orderDetailVO = orderService.findOrderDerDetailByOrderId("1587902453545660073");
+        int i = 0;
+    }
+
+    @Test
+    void pay(){
+        System.out.println(orderService.pay("1587902453545660073"));
     }
 }
