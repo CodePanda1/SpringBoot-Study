@@ -1,6 +1,7 @@
 package com.example.water_fee.controller;
 
 
+import com.example.water_fee.entity.UserRecharge;
 import com.example.water_fee.entity.UserStatistics;
 import com.example.water_fee.repository.UserStatisticsRepository;
 import com.example.water_fee.service.UserStatisticsService;
@@ -31,5 +32,14 @@ public class UserStatisticsHandler {
     @GetMapping("/getStatistics&{supplyNumber}")
     public UserStatisticsVO findBySupplyNumberStatistics(@PathVariable("supplyNumber")String supplyNumber){
         return userStatisticsService.findBySupplyNumberStatistics(supplyNumber);
+    }
+
+    @GetMapping("/getStatistics&{supplyNumber}/{page}/{size}")
+    public Page<UserStatistics> findBySupplyNumberStatisticsPage(
+            @PathVariable("supplyNumber") String supplyNumber,
+            @PathVariable("page") Integer page,
+            @PathVariable("size") Integer size) {
+        PageRequest request = PageRequest.of(page, size);
+        return userStatisticsRepository.findBySupplyNumber(supplyNumber,request);
     }
 }
