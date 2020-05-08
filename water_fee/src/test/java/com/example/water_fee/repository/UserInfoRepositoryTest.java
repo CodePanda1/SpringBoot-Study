@@ -42,4 +42,25 @@ class UserInfoRepositoryTest {
             repository.save(userInfo);
         }
     }
+
+    @Test
+    void count() {
+        UserInfo userInfo = new UserInfo();
+        BigDecimal qqq = userInfo.getMoneyLeft();
+//        BigDecimal bigDecimal = repository.countByMoneyLeft(qqq);
+//        String qwe = bigDecimal+"";
+//        System.out.println(qwe);
+        int i   =0;
+    }
+
+    @Test
+    public void findDomainAndCount() {
+        List<Object[]> list = repository.findDomainAndCount();
+        for (Object[] objs : list) {
+            for (int i = 0; i < objs.length; i++) {
+                System.out.print(String.valueOf(objs[i]) + ",");
+            }
+            System.out.println();
+        }
+    }
 }
