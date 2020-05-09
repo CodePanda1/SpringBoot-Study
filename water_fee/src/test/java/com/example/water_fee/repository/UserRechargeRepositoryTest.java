@@ -24,8 +24,8 @@ class UserRechargeRepositoryTest {
     }
 
     @Test
-    void findSupplyNumberRecharge(){
-        List<UserRecharge>userRechargeList=repository.findBySupplyNumber("FYCJ002");
+    void findSupplyNumberRecharge() {
+        List<UserRecharge> userRechargeList = repository.findBySupplyNumber("FYCJ002");
         for (UserRecharge userRecharge : userRechargeList) {
             System.out.println(userRecharge);
         }
@@ -38,6 +38,16 @@ class UserRechargeRepositoryTest {
         userRecharge.setSupplyNumber("FYCJ001");
         userRecharge.setRechargeAmount(new BigDecimal(89.12));
         repository.save(userRecharge);
+    }
+
+    @Test
+    void sumRecharge() {
+        List<Object[]> list = repository.findSumRecharge();
+        for (Object[] objs : list) {
+            for (int i = 0; i < objs.length; i++) {
+                System.out.print(objs[i]);
+            }
+        }
     }
 
 }

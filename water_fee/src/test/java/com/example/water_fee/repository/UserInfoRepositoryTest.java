@@ -54,13 +54,34 @@ class UserInfoRepositoryTest {
     }
 
     @Test
-    public void findDomainAndCount() {
-        List<Object[]> list = repository.findDomainAndCount();
+    void findSumRegister(){
+        List<Object[]> list = repository.findSumRegister();
+//        System.out.println(list);
+        for (Object[] objs : list) {
+            for (int i = 0; i < objs.length; i++) {
+                System.out.print(String.valueOf(objs[i]));
+            }
+        }
+    }
+
+    @Test
+    public void findSumMoneyLeft() {
+        List<Object[]> list = repository.findSumMoneyLeft();
         for (Object[] objs : list) {
             for (int i = 0; i < objs.length; i++) {
                 System.out.print(String.valueOf(objs[i]) + ",");
             }
             System.out.println();
+        }
+    }
+
+    @Test
+    public void findSumWaterLeft() {
+        List<Object[]> list = repository.findSumWaterLeft();
+        for (Object[] objs : list) {
+            for (int i = 0; i < objs.length; i++) {
+                System.out.print(String.valueOf(objs[i]) + ",");
+            }
         }
     }
 }

@@ -7,10 +7,14 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface UserInfoRepository extends JpaRepository<UserInfo, Integer> {
-    public List<UserInfo> findBySupplyNumber(String SupplyNumber);
+    List<UserInfo> findBySupplyNumber(String SupplyNumber);
 
-    @Query(value = "SELECT money_left from user_info GROUP BY money_left ORDER BY sum(money_left) desc",
-            nativeQuery = true)
-    List<Object[]> findDomainAndCount();
+    @Query(value = "SELECT count(*) from user_info ", nativeQuery = true)
+    List<Object[]> findSumRegister();
 
+    @Query(value = "SELECT sum(money_left) from user_info ", nativeQuery = true)
+    List<Object[]> findSumMoneyLeft();
+
+    @Query(value = "SELECT sum(water_left) from user_info ", nativeQuery = true)
+    List<Object[]> findSumWaterLeft();
 }
