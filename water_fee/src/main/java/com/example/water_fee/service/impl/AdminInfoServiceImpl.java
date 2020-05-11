@@ -6,6 +6,7 @@ import com.example.water_fee.vo.AdminInfoVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 @Service
 public class AdminInfoServiceImpl implements AdminInfoService {
 
