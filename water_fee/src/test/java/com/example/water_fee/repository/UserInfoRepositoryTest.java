@@ -55,7 +55,7 @@ class UserInfoRepositoryTest {
 
     @Test
     void findSumRegister(){
-        List<Object[]> list = repository.findSumRegister();
+        List<Integer[]> list = repository.findSumRegister();
 //        System.out.println(list);
         for (Object[] objs : list) {
             for (int i = 0; i < objs.length; i++) {
@@ -66,7 +66,7 @@ class UserInfoRepositoryTest {
 
     @Test
     public void findSumMoneyLeft() {
-        List<Object[]> list = repository.findSumMoneyLeft();
+        List<BigDecimal[]> list = repository.findSumMoneyLeft();
         for (Object[] objs : list) {
             for (int i = 0; i < objs.length; i++) {
                 System.out.print(String.valueOf(objs[i]) + ",");
@@ -77,7 +77,7 @@ class UserInfoRepositoryTest {
 
     @Test
     public void findSumWaterLeft() {
-        List<Object[]> list = repository.findSumWaterLeft();
+        List<BigDecimal[]> list = repository.findSumWaterLeft();
         for (Object[] objs : list) {
             for (int i = 0; i < objs.length; i++) {
                 System.out.print(String.valueOf(objs[i]) + ",");

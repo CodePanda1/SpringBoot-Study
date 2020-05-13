@@ -42,8 +42,18 @@ class UserRechargeRepositoryTest {
 
     @Test
     void sumRecharge() {
-        List<Object[]> list = repository.findSumRecharge();
+        List<Integer[]> list = repository.findSumRecharge();
         for (Object[] objs : list) {
+            for (int i = 0; i < objs.length; i++) {
+                System.out.print(objs[i]);
+            }
+        }
+    }
+
+    @Test
+    void qqqRecharge() {
+        List<Integer[]> list = repository.SumRecharge();
+        for (Integer[] objs : list) {
             for (int i = 0; i < objs.length; i++) {
                 System.out.print(objs[i]);
             }

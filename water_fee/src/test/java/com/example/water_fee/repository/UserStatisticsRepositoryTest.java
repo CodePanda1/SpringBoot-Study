@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.math.BigDecimal;
-import java.util.List;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 @SpringBootTest
 class UserStatisticsRepositoryTest {
@@ -31,5 +33,11 @@ class UserStatisticsRepositoryTest {
         repository.save(userStatistics);
     }
 
+    @Test
+    void qqq() throws ParseException {
+        Date date = new SimpleDateFormat("yyyy-MM-dd").parse("2005-12-09");
+        String now = new SimpleDateFormat("M月").format(date);
+        System.out.println(now);
+    }
 
 }

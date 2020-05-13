@@ -6,9 +6,11 @@ import java.math.BigDecimal;
 
 @Data
 public class AdminInfoVO {
+    private int status = 200;
+    private String end = "查询成功";
     private BigDecimal unitPrice;
     private Integer sumRegister;
-    private Integer sumMoneyLeft;
-    private Integer sumWaterLeft;
+    private BigDecimal sumMoneyLeft;
+    private BigDecimal sumWaterLeft;
     private Integer sumRecharge;
 }

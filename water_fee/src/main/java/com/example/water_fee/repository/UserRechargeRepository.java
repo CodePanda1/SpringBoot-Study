@@ -14,5 +14,8 @@ public interface UserRechargeRepository extends JpaRepository<UserRecharge, Stri
     Page<UserRecharge> findBySupplyNumber(String SupplyNumber, Pageable pageable);
 
     @Query(value = "SELECT count(*) from user_recharge where recharge_status = 1", nativeQuery = true)
-    List<Object[]> findSumRecharge();
+    List<Integer[]> findSumRecharge();
+
+    @Query(value = "SELECT count(*) from user_recharge where recharge_status = 1", nativeQuery = true)
+    List<Integer[]> SumRecharge();
 }
