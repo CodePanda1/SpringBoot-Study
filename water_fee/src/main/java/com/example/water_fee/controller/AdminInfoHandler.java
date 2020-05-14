@@ -4,12 +4,12 @@ import com.example.water_fee.entity.AdminInfo;
 import com.example.water_fee.repository.AdminInfoRepository;
 import com.example.water_fee.service.AdminInfoService;
 import com.example.water_fee.vo.AdminInfoVO;
+import com.example.water_fee.vo.adminechartvo.AdminChartVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
 
 @RestController
 @RequestMapping("/adminInfo")
@@ -25,8 +25,8 @@ public class AdminInfoHandler {
         return adminInfoService.findAdminInfoVO();
     }
 
-//    @GetMapping("adminInfoFindAll")
-//    public List<AdminInfo> adminInfoFindAll(){
-//        return adminInfoRepository.findAll();
-//    }
+    @GetMapping("getFindAdminChartVO")
+    public AdminChartVO findAdminChartVO(){
+        return adminInfoService.findAdminChartVO();
+    }
 }

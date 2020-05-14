@@ -29,5 +29,4 @@ public class UserInfoHandler {
         return userInfoService.findBySupplyNumber(supplyNumber);
     }
 
-
 }
