@@ -2,7 +2,9 @@ package com.example.water_fee.vo.adminechartvo;
 
 import lombok.Data;
 
+import java.util.Map;
+
 @Data
 public class NormalVO {
-    private AreaStyleVO areaStyle;
+    private Map<String,String> areaStyle;
 }

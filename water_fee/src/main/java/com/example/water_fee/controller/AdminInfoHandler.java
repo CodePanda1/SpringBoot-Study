@@ -1,6 +1,5 @@
 package com.example.water_fee.controller;
 
-import com.example.water_fee.entity.AdminInfo;
 import com.example.water_fee.repository.AdminInfoRepository;
 import com.example.water_fee.service.AdminInfoService;
 import com.example.water_fee.vo.AdminInfoVO;
@@ -21,12 +20,12 @@ public class AdminInfoHandler {
     private AdminInfoRepository adminInfoRepository;
 
     @GetMapping("adminInfoFindAll")
-    public AdminInfoVO adminInfoFindAll(){
+    public AdminInfoVO adminInfoFindAll() {
         return adminInfoService.findAdminInfoVO();
     }
 
     @GetMapping("getFindAdminChartVO")
-    public AdminChartVO findAdminChartVO(){
+    public AdminChartVO findAdminChartVO() throws Exception {
         return adminInfoService.findAdminChartVO();
     }
 }

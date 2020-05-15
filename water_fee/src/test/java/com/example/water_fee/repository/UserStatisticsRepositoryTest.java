@@ -2,7 +2,7 @@ package com.example.water_fee.repository;
 
 import com.example.water_fee.entity.UserStatistics;
 import com.example.water_fee.util.KeyUtil;
-import com.example.water_fee.vo.UserStatisticsVO;
+import com.example.water_fee.util.DateUtil;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -40,4 +40,25 @@ class UserStatisticsRepositoryTest {
         System.out.println(now);
     }
 
+    @Test
+    void dateSumStatisticsAmount() throws Exception {
+        List object= DateUtil.getMonthBetween();
+        System.out.println(object);
+        ArrayList arrayList = new ArrayList();
+        for (Object o : object) {
+            arrayList.add(repository.SumStatisticsAmount((String) o));
+        }
+        System.out.println(arrayList);
+    }
+
+    @Test
+    void countStatisticsUser() throws Exception {
+        List object= DateUtil.getMonthBetween();
+        System.out.println(object);
+        ArrayList arrayList = new ArrayList();
+        for (Object o : object) {
+            arrayList.add(repository.CountStatisticsUser((String) o));
+        }
+        System.out.println(arrayList);
+    }
 }

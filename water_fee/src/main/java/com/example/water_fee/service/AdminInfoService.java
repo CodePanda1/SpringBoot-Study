@@ -6,5 +6,5 @@ import com.example.water_fee.vo.adminechartvo.AdminChartVO;
 public interface AdminInfoService {
     public AdminInfoVO findAdminInfoVO();
 
-    public AdminChartVO findAdminChartVO();
+    public AdminChartVO findAdminChartVO() throws Exception;
 }
