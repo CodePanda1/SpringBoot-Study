@@ -16,8 +16,6 @@ public class AdminInfoHandler {
 
     @Autowired
     private AdminInfoService adminInfoService;
-    @Autowired
-    private AdminInfoRepository adminInfoRepository;
 
     @GetMapping("adminInfoFindAll")
     public AdminInfoVO adminInfoFindAll() {
