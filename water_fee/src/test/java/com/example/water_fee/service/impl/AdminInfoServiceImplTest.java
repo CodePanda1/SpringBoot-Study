@@ -15,7 +15,7 @@ class AdminInfoServiceImplTest {
     private AdminInfoService adminInfoService;
 
     @Test
-    void findAdminInfoVO() {
+    void findAdminInfoVO() throws Exception {
         AdminInfoVO adminInfoVO =adminInfoService.findAdminInfoVO();
         System.out.println(adminInfoVO);
     }

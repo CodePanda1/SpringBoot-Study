@@ -1,9 +1,7 @@
 package com.example.water_fee.controller;
 
-import com.example.water_fee.repository.AdminInfoRepository;
 import com.example.water_fee.service.AdminInfoService;
 import com.example.water_fee.vo.AdminInfoVO;
-import com.example.water_fee.vo.adminechartvo.AdminChartVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,12 +16,7 @@ public class AdminInfoHandler {
     private AdminInfoService adminInfoService;
 
     @GetMapping("adminInfoFindAll")
-    public AdminInfoVO adminInfoFindAll() {
+    public AdminInfoVO adminInfoFindAll() throws Exception {
         return adminInfoService.findAdminInfoVO();
-    }
-
-    @GetMapping("getFindAdminChartVO")
-    public AdminChartVO findAdminChartVO() throws Exception {
-        return adminInfoService.findAdminChartVO();
     }
 }
