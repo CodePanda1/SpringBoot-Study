@@ -10,7 +10,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("userInfo")
+@RequestMapping("/userInfo")
 public class UserInfoHandler {
 
     @Autowired
