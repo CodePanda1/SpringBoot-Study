@@ -28,7 +28,7 @@ public class RegistUserServlet extends HttpServlet {
         String checkcode_server = (String) session.getAttribute("CHECKCODE_SERVER");
         session.removeAttribute("CHECKCODE_SERVER");//为了保证验证码只能使用一次
         //比较
-        if(checkcode_server == null || !checkcode_server.equalsIgnoreCase(check)){
+        if (checkcode_server == null || !checkcode_server.equalsIgnoreCase(check)) {
             //验证码错误
             ResultInfo info = new ResultInfo();
             //注册失败
@@ -48,7 +48,7 @@ public class RegistUserServlet extends HttpServlet {
         //2.封装对象
         User user = new User();
         try {
-            BeanUtils.populate(user,map);
+            BeanUtils.populate(user, map);
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         } catch (InvocationTargetException e) {
@@ -60,10 +60,10 @@ public class RegistUserServlet extends HttpServlet {
         boolean flag = service.regist(user);
         ResultInfo info = new ResultInfo();
         //4.响应结果
-        if(flag){
+        if (flag) {
             //注册成功
             info.setFlag(true);
-        }else{
+        } else {
             //注册失败
             info.setFlag(false);
             info.setErrorMsg("注册失败!");
@@ -77,8 +77,6 @@ public class RegistUserServlet extends HttpServlet {
         //设置content-type
         response.setContentType("application/json;charset=utf-8");
         response.getWriter().write(json);
-
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

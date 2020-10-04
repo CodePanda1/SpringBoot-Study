@@ -9,7 +9,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 public class UserDaoImpl implements UserDao {
 
-    private JdbcTemplate template = new JdbcTemplate(JDBCUtils.getDataSource());
+    private final JdbcTemplate template = new JdbcTemplate(JDBCUtils.getDataSource());
 
     @Override
     public User findByUsername(String username) {
@@ -32,8 +32,8 @@ public class UserDaoImpl implements UserDao {
         String sql = "insert into tab_user(username,password,name,birthday,sex,telephone,email,status,code) values(?,?,?,?,?,?,?,?,?)";
         //2.执行sql
 
-        template.update(sql,user.getUsername(),
-                    user.getPassword(),
+        template.update(sql, user.getUsername(),
+                user.getPassword(),
                 user.getName(),
                 user.getBirthday(),
                 user.getSex(),
@@ -41,11 +41,12 @@ public class UserDaoImpl implements UserDao {
                 user.getEmail(),
                 user.getStatus(),
                 user.getCode()
-                );
+        );
     }
 
     /**
      * 根据激活码查询用户对象
+     *
      * @param code
      * @return
      */
@@ -55,7 +56,7 @@ public class UserDaoImpl implements UserDao {
         try {
             String sql = "select * from tab_user where code = ?";
 
-            user = template.queryForObject(sql,new BeanPropertyRowMapper<User>(User.class),code);
+            user = template.queryForObject(sql, new BeanPropertyRowMapper<User>(User.class), code);
         } catch (DataAccessException e) {
             e.printStackTrace();
         }
@@ -65,16 +66,18 @@ public class UserDaoImpl implements UserDao {
 
     /**
      * 修改指定用户激活状态
+     *
      * @param user
      */
     @Override
     public void updateStatus(User user) {
         String sql = " update tab_user set status = 'Y' where uid=?";
-        template.update(sql,user.getUid());
+        template.update(sql, user.getUid());
     }
 
     /**
      * 根据用户名和密码查询的方法
+     *
      * @param username
      * @param password
      * @return
@@ -86,7 +89,7 @@ public class UserDaoImpl implements UserDao {
             //1.定义sql
             String sql = "select * from tab_user where username = ? and password = ?";
             //2.执行sql
-            user = template.queryForObject(sql, new BeanPropertyRowMapper<User>(User.class), username,password);
+            user = template.queryForObject(sql, new BeanPropertyRowMapper<User>(User.class), username, password);
         } catch (Exception e) {
 
         }
