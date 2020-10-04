@@ -57,8 +57,6 @@ public class UserServiceImpl implements UserService {
             return false;
         }
 
-
-
     }
 
     /**
@@ -70,5 +68,4 @@ public class UserServiceImpl implements UserService {
     public User login(User user) {
         return userDao.findByUsernameAndPassword(user.getUsername(),user.getPassword());
     }
-
 }
