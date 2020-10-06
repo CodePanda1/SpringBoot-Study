@@ -25,13 +25,14 @@ class UserInfoRepositoryTest {
     @Test
     void save() {
         UserInfo userInfo = new UserInfo();
-        userInfo.setSupplyNumber("FYCJ002");
-        userInfo.setRealName("李小红");
-        userInfo.setUserTel("13896963232");
-        userInfo.setUserAddress("中国山东省济南市章丘区文博路2号");
-        userInfo.setMoneyLeft(new BigDecimal(36.021));
-        userInfo.setWaterLeft(new BigDecimal(965.02112));
+        userInfo.setSupplyNumber("FYCJ0010");
+        userInfo.setRealName("陈得分");
+        userInfo.setUserTel("15612344321");
+        userInfo.setUserAddress("中国山东省济南市章丘区花园小区56号");
+        userInfo.setMoneyLeft(new BigDecimal(86.021));
+        userInfo.setWaterLeft(new BigDecimal(95.02112));
         repository.save(userInfo);
+
     }
 
     @Test
@@ -50,16 +51,16 @@ class UserInfoRepositoryTest {
 //        BigDecimal bigDecimal = repository.countByMoneyLeft(qqq);
 //        String qwe = bigDecimal+"";
 //        System.out.println(qwe);
-        int i   =0;
+        int i = 0;
     }
 
     @Test
-    void findSumRegister(){
+    void findSumRegister() {
         List<Integer[]> list = repository.findSumRegister();
 //        System.out.println(list);
         for (Object[] objs : list) {
             for (int i = 0; i < objs.length; i++) {
-                System.out.print(String.valueOf(objs[i]));
+                System.out.print(objs[i]);
             }
         }
     }
@@ -69,7 +70,7 @@ class UserInfoRepositoryTest {
         List<BigDecimal[]> list = repository.findSumMoneyLeft();
         for (Object[] objs : list) {
             for (int i = 0; i < objs.length; i++) {
-                System.out.print(String.valueOf(objs[i]) + ",");
+                System.out.print(objs[i] + ",");
             }
             System.out.println();
         }
@@ -80,7 +81,7 @@ class UserInfoRepositoryTest {
         List<BigDecimal[]> list = repository.findSumWaterLeft();
         for (Object[] objs : list) {
             for (int i = 0; i < objs.length; i++) {
-                System.out.print(String.valueOf(objs[i]) + ",");
+                System.out.print(objs[i] + ",");
             }
         }
     }

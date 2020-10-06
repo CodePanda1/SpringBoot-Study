@@ -28,8 +28,8 @@ class UserStatisticsRepositoryTest {
     void statistics() {
         UserStatistics userStatistics = new UserStatistics();
         userStatistics.setStatisticsId(KeyUtil.createUniqueKey());
-        userStatistics.setStatisticsDaily(new BigDecimal(2.923));
-        userStatistics.setSupplyNumber("FYCJ001");
+        userStatistics.setStatisticsDaily(new BigDecimal(22.923));
+        userStatistics.setSupplyNumber("FYCJ011");
         repository.save(userStatistics);
     }
 
