@@ -35,12 +35,15 @@ class UserRechargeRepositoryTest {
 
     @Test
     void recharge() {
-        UserRecharge userRecharge = new UserRecharge();
-        userRecharge.setRechargeId(KeyUtil.createUniqueKey());
-        userRecharge.setSupplyNumber("FYCJ003");
-        userRecharge.setRechargeStatus(1);
-        userRecharge.setRechargeAmount(new BigDecimal(8.12));
-        repository.save(userRecharge);
+        for(int i=0;i<=20;i++){
+            UserRecharge userRecharge = new UserRecharge();
+            userRecharge.setRechargeId(KeyUtil.createUniqueKey());
+            userRecharge.setSupplyNumber("FYCJ003");
+            userRecharge.setRechargeStatus(1);
+            userRecharge.setRechargeAmount(new BigDecimal(8.12));
+            repository.save(userRecharge);
+        }
+
     }
 
     @Test
