@@ -41,12 +41,12 @@ public class AdminInfoServiceImpl implements AdminInfoService {
             }
         }
 
-//        List<BigDecimal[]> MoneyLeftList = userInfoRepository.findSumMoneyLeft();
-//        for (BigDecimal[] objs : MoneyLeftList) {
-//            for (BigDecimal obj : objs) {
-//                adminInfoVO.setSumMoneyLeft(obj);
-//            }
-//        }
+        List<BigDecimal[]> MoneyLeftList = userInfoRepository.findSumMoneyLeft();
+        for (BigDecimal[] objs : MoneyLeftList) {
+            for (BigDecimal obj : objs) {
+                adminInfoVO.setSumMoneyLeft(obj);
+            }
+        }
 
         List<BigDecimal[]> SumWaterLeftList = userInfoRepository.findSumWaterLeft();
         for (BigDecimal[] objs : SumWaterLeftList) {

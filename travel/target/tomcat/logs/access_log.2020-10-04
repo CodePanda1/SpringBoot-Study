@@ -1,0 +1,5 @@
+0:0:0:0:0:0:0:1 - - [04/Oct/2020:16:47:44 +0800] "GET /travel HTTP/1.1" 302 - http-bio-80-exec-1 0
+0:0:0:0:0:0:0:1 - - [04/Oct/2020:16:47:44 +0800] "GET /travel/findUserServlet HTTP/1.1" 200 4 http-bio-80-exec-3 110
+0:0:0:0:0:0:0:1 - - [04/Oct/2020:16:47:52 +0800] "GET / HTTP/1.1" 404 - http-bio-80-exec-4 0
+127.0.0.1 - - [04/Oct/2020:16:50:04 +0800] "GET / HTTP/1.1" 404 - http-bio-80-exec-7 0
+0:0:0:0:0:0:0:1 - - [04/Oct/2020:16:55:57 +0800] "GET /travel/activeUserServlet?code=62326e63f17b49ecb7f4f4bff30fc5fc HTTP/1.1" 200 34 http-bio-80-exec-1 158

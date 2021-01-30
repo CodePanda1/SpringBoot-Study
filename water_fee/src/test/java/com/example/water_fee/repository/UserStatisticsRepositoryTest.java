@@ -26,11 +26,20 @@ class UserStatisticsRepositoryTest {
 
     @Test
     void statistics() {
-        UserStatistics userStatistics = new UserStatistics();
-        userStatistics.setStatisticsId(KeyUtil.createUniqueKey());
-        userStatistics.setStatisticsDaily(new BigDecimal(2.923));
-        userStatistics.setSupplyNumber("FYCJ001");
-        repository.save(userStatistics);
+        Random random = new Random();
+        for (int i=0;i<=20;i++){
+            UserStatistics userStatistics = new UserStatistics();
+            userStatistics.setStatisticsId(KeyUtil.createUniqueKey());
+            userStatistics.setStatisticsDaily(new BigDecimal(random.nextInt(10)+random.nextDouble()));
+            userStatistics.setSupplyNumber("FYCJ0"+ random.nextInt(11));
+            repository.save(userStatistics);
+        }
+    }
+
+    @Test
+    void qwe(){
+        Random random = new Random();
+        System.out.println(random.nextInt(10)+"");
     }
 
     @Test
