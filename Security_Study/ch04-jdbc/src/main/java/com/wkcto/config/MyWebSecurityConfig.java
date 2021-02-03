@@ -1,11 +1,15 @@
 package com.wkcto.config;
 
+import com.wkcto.provider.MyUserDetailService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -14,23 +18,13 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @EnableGlobalMethodSecurity(prePostEnabled = true) //启用方法级别的认证
 public class MyWebSecurityConfig extends WebSecurityConfigurerAdapter {
 
+    @Autowired
+    @Qualifier("MyUserDetailService")
+    private UserDetailsService userDetailsService;
+
     //在方法中配置用户名和密码，作为登录信息
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        PasswordEncoder pe = passwordEncoder();
 
-        //定义两个角色 normal admin
-
-        auth.inMemoryAuthentication().withUser("zhangsan").password(pe.encode("123")).roles("normal");
-        auth.inMemoryAuthentication().withUser("lisi").password(pe.encode("321")).roles("normal");
-        auth.inMemoryAuthentication()
-                .withUser("admin").password(pe.encode("admin")).roles("admin", "normal");
-    }
-
-    //创建密码的加密类
-    @Bean //把方法返回值的对象，放入Spring容器中
-    public PasswordEncoder passwordEncoder() {
-        //创建passwordEncoder的实现类，实现加密算法
-        return new BCryptPasswordEncoder();
     }
 }
