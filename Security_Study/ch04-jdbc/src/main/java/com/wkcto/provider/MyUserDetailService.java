@@ -34,6 +34,8 @@ public class MyUserDetailService implements UserDetailsService {
 
                 //创建user对象
                 user = new User(userInfo.getUsername(), userInfo.getPassword(), grantedAuthorityList);
+            } else {
+                throw new IllegalArgumentException("\"无此用户！\"");
             }
         }
 

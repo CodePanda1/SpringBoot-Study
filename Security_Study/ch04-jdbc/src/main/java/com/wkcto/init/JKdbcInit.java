@@ -9,26 +9,26 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 
-@Component
+//@Component
 public class JKdbcInit {
 
     @Autowired
     private UserInfoDao userInfoDao;
 
-    @PostConstruct
-    public void init() {
-        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-
-        UserInfo userInfo = new UserInfo();
-        userInfo.setUsername("zhangsan");
-        userInfo.setPassword(passwordEncoder.encode("123456"));
-        userInfo.setRole("normal");
-        userInfoDao.save(userInfo);
-
-        userInfo = new UserInfo();
-        userInfo.setUsername("admin");
-        userInfo.setPassword(passwordEncoder.encode("admin"));
-        userInfo.setRole("admin");
-        userInfoDao.save(userInfo);
-    }
+//    @PostConstruct
+//    public void init() {
+//        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+//
+//        UserInfo userInfo = new UserInfo();
+//        userInfo.setUsername("zhangsan");
+//        userInfo.setPassword(passwordEncoder.encode("123456"));
+//        userInfo.setRole("normal");
+//        userInfoDao.save(userInfo);
+//
+//        userInfo = new UserInfo();
+//        userInfo.setUsername("admin");
+//        userInfo.setPassword(passwordEncoder.encode("admin"));
+//        userInfo.setRole("admin");
+//        userInfoDao.save(userInfo);
+//    }
 }
