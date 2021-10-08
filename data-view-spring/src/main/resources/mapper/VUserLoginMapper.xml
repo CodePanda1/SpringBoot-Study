@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dev.dataviewspring.mapper.VUserLoginMapper">
+    <select id="userLoginList" resultType="com.dev.dataviewspring.entity.VUserLoginEntity">
+        select *
+        from v_user_login
+        limit 100;
+    </select>
+</mapper>
