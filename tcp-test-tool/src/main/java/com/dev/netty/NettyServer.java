@@ -46,7 +46,7 @@ public class NettyServer {
                         @Override
                         protected void initChannel(SocketChannel ch) {
                             ChannelPipeline pipeline = ch.pipeline();
-                            pipeline.addLast(new LoggingHandler(LogLevel.INFO));
+//                            pipeline.addLast(new LoggingHandler(LogLevel.INFO));
                             pipeline.addLast(new StringDecoder(StandardCharsets.UTF_8));
                             pipeline.addLast(new StringEncoder(StandardCharsets.UTF_8));
                             pipeline.addLast(new ServiceHandler());
